@@ -1,2 +1,2 @@
 ## SearchCinema
- -#SearchCinema by Daria Bugaiova and Dmytro Dovbnia
+ SearchCinema by Daria Bugaiova and Dmytro Dovbnia
