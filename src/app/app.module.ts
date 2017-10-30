@@ -2,10 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { secondlist} from '../pages/secondlist/secondlist';
+import { FilmName} from '../pages/FilmName/name';
+import {Test} from '../pages/Test/test';
+import {SearchByNameForm} from "../forms/searchByName/searchByName";
+import {SearchSeance} from "../pages/searchseance/searchseance";
+import{SearchBySeanceForm} from "../forms/searchBySeance/searcheBySeance";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +21,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    secondlist
+    secondlist,
+    FilmName,
+    Test,
+    SearchByNameForm,
+    SearchBySeanceForm,
+    SearchSeance
   ],
   imports: [
     BrowserModule,
@@ -26,7 +37,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    secondlist
+    secondlist,
+    FilmName,
+    Test,
+    SearchSeance
   ],
   providers: [
     StatusBar,
