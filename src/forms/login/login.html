@@ -1,0 +1,9 @@
+<form (ngSubmit)="SubmitForm()">
+    <ion-item>
+      <ion-input [(ngModel)]="formLogin.login" name="login" placeholder="login"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="formLogin.pass" name="pass" type="password" placeholder="pass"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" block>Ввійти</button>
+</form>

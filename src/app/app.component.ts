@@ -5,7 +5,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { secondlist} from '../pages/secondlist/secondlist';
+//import { secondlist} from '../pages/secondlist/secondlist';
+
+import { LoginPage} from "../pages/login/login";
+import { SearchByParamPage} from "../pages/searchByParam/searchByParam";
 
 @Component({
   templateUrl: 'app.html'
@@ -24,7 +27,8 @@ export class MyApp {
     this.pages = [
       { title: 'Пошуку конкретного фільму ', component: HomePage },
       { title: 'Пошуку сеансів ', component: ListPage },
-      { title: 'Пошук фільму за параметрами', component: secondlist}
+      { title: 'Пошук фільму за параметрами', component: SearchByParamPage},
+      { title: 'Ввійти', component: LoginPage}
     ];
 
   }
