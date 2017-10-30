@@ -10,12 +10,21 @@ import { secondlist} from '../pages/secondlist/secondlist';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import {LoginForm} from "../forms/login/login";
+import {LoginPage} from "../pages/login/login";
+import { SearchByParamPage} from "../pages/searchByParam/searchByParam";
+import {SearchByParamForm} from "../forms/searchByParam/searchByParam";
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    secondlist
+    secondlist,
+    LoginForm,
+    LoginPage,
+    SearchByParamPage,
+    SearchByParamForm
   ],
   imports: [
     BrowserModule,
@@ -26,7 +35,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    secondlist
+    secondlist,
+    LoginPage,
+    SearchByParamPage
   ],
   providers: [
     StatusBar,

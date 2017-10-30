@@ -1,0 +1,57 @@
+<form (ngSubmit)="SubmitForm()">
+  <ion-item>
+    <ion-label>рейтинг imdb - від</ion-label>
+
+    <ion-input [(ngModel)]="formSearchByParam.imdb_from" type="number" name="imdb_from" placeholder="0"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>рейтинг imdb - до</ion-label>
+
+    <ion-input [(ngModel)]="formSearchByParam.imdb_to" type="number" name="imdb_to" placeholder="10"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Країна походженн</ion-label>
+    <ion-select [(ngModel)]="formSearchByParam.country" name="country">
+      <ion-option value="UA">Україна</ion-option>
+      <ion-option value="USA">США</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Актори </ion-label>
+    <ion-select [(ngModel)]="formSearchByParam.actors" name="actors">
+      <ion-option value="Актор 1">Актор 1</ion-option>
+      <ion-option value="Актор 2">Актор 2</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Режисери</ion-label>
+    <ion-select [(ngModel)]="formSearchByParam.director" name="director">
+      <ion-option value="режисер 1">режисер 1</ion-option>
+      <ion-option value="режисер 2">режисер 2</ion-option>
+    </ion-select>
+  </ion-item>
+
+      <ion-title>
+        Жанр фільму
+      </ion-title>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>жанр 1</ion-label>
+      <ion-checkbox  name="genre" value="genre1"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>жанр 2</ion-label>
+      <ion-checkbox name="genre" value="genre2"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label>дата прем’єри в Україні </ion-label>
+    <ion-datetime displayFormat="MMM DD YYYY"  pickerFormat="MMM DD YYYY" [(ngModel)]="formSearchByParam.datePremiere" name="datePremiere"></ion-datetime>
+  </ion-item>
+  <button ion-button type="submit" block>Пошук</button>
+
+</form>
