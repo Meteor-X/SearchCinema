@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'searchBySeance',
+  selector: 'seance-form',
   templateUrl: 'searchBySeance.html'
 })
 
-export class SearchBySeanceForm{
+export class SeanceForm{
   public formSeance = {dataseance:"",
                        cityseance:"",
                         visionseance:"",

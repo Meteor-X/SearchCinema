@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'seance-form',
+  selector: 'page-seance',
   templateUrl: 'searchseance.html'
 })
 
 
 
-export class SearchSeance {
+export class SeancePage {
 
 }

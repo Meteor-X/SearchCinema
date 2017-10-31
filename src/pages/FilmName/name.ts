@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'name',
+  selector: 'page-name',
   templateUrl: 'name.html'
 })
 

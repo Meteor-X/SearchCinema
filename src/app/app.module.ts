@@ -8,11 +8,17 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { secondlist} from '../pages/secondlist/secondlist';
-import { FilmName} from '../pages/FilmName/name';
 import {Test} from '../pages/Test/test';
+
+import { FilmName} from '../pages/FilmName/name';
 import {SearchByNameForm} from "../forms/searchByName/searchByName";
-import {SearchSeance} from "../pages/searchseance/searchseance";
-import{SearchBySeanceForm} from "../forms/searchBySeance/searcheBySeance";
+
+import {SeancePage} from "../pages/searchseance/searchseance";
+import{SeanceForm} from "../forms/searchBySeance/searcheBySeance";
+
+import{RegistrationPage} from "../pages/registration/registration";
+import{RegistrationForm} from "../forms/registration/registration";
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,8 +32,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FilmName,
     Test,
     SearchByNameForm,
-    SearchBySeanceForm,
-    SearchSeance
+    SeanceForm,
+    SeancePage,
+    RegistrationPage,
+    RegistrationForm
   ],
   imports: [
     BrowserModule,
@@ -41,7 +49,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     secondlist,
     FilmName,
     Test,
-    SearchSeance
+    SeancePage,
+    RegistrationPage
   ],
   providers: [
     StatusBar,

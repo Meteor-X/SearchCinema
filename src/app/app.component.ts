@@ -3,14 +3,13 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import {SearchSeance} from '../pages/searchseance/searchseance';
+import {SeancePage} from '../pages/searchseance/searchseance';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { secondlist} from '../pages/secondlist/secondlist';
 import { FilmName} from '../pages/FilmName/name';
 import{Test} from '../pages/Test/test';
-
-
+import{RegistrationPage} from "../pages/registration/registration";
 
 
 @Component({
@@ -34,7 +33,8 @@ export class MyApp {
       { title: 'Пошук фільму за параметрами', component: secondlist},
       { title: 'Пошук конткретного фільму', component:FilmName},
       {title: 'Test', component: Test},
-      {title: 'Пошук фільму за сеансом', component: SearchSeance}
+      {title: 'Пошук фільму за сеансом', component: SeancePage},
+      {title: 'Реєстрація', component: RegistrationPage}
     ];
 
   }
