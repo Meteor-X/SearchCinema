@@ -24,24 +24,39 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpModule} from "@angular/http";
 
+import {LoginForm} from "../forms/login/login";
+import {LoginPage} from "../pages/login/login";
+import { SearchByParamPage} from "../pages/searchByParam/searchByParam";
+import {SearchByParamForm} from "../forms/searchByParam/searchByParam";
+//import { HTTP } from '@ionic-native/http';
+import {HttpModule} from '@angular/http';
+
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
     secondlist,
+
     FilmName,
     Test,
     SearchByNameForm,
     SeanceForm,
     SeancePage,
     RegistrationPage,
-    RegistrationForm
+    RegistrationForm,
+    
+    LoginForm,
+    LoginPage,
+    SearchByParamPage,
+    SearchByParamForm,
   ],
   imports: [
     HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,11 +68,15 @@ import {HttpModule} from "@angular/http";
     Test,
     SeancePage,
     RegistrationPage
+    LoginPage,
+    SearchByParamPage
+
   ],
   providers: [
 
     StatusBar,
     SplashScreen,
+ //   HTTP,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

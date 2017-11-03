@@ -1,0 +1,61 @@
+<form (ngSubmit)="SubmitForm()">
+
+  <ion-item>
+    <ion-label>рейтинг imdb: від {{ formSearchByParam.imdb.lower }} до {{formSearchByParam.imdb.upper}}</ion-label>
+    <ion-range min="0" max="10" dualKnobs="true" pin="true"  name="imdb" [(ngModel)]="formSearchByParam.imdb"  color="dark">
+      <ion-icon range-left small name="md-thumbs-down"></ion-icon>
+      <ion-icon range-right name="md-thumbs-up"></ion-icon>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Країна походженн</ion-label>
+    <ion-select [(ngModel)]="formSearchByParam.country" name="country">
+      <ion-option *ngFor="let item of allList.countries" value="{{item.code}}">{{item.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Дата прем’єри в Україні від</ion-label>
+    <ion-datetime displayFormat="MMM DD YYYY"  pickerFormat="MMM DD YYYY" [(ngModel)]="formSearchByParam.datePremiere" name="datePremiere"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Актори</ion-label>
+    <ion-select [(ngModel)]="formSearchByParam.actors" name="actors" multiple="true">
+      <ion-option *ngFor="let item of allList.actors" value="{{item.id}}">{{item.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Режисери</ion-label>
+    <ion-select [(ngModel)]="formSearchByParam.rejisser" name="rejisser" multiple="true">
+      <ion-option *ngFor="let item of allList.rejisser" value="{{item.id}}">{{item.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Жанри</ion-label>
+    <ion-select [(ngModel)]="formSearchByParam.genres" name="genres" multiple="true">
+      <ion-option *ngFor="let item of allList.genres" value="{{item.id}}">{{item.name}}</ion-option>
+    </ion-select>
+
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Вікові обмеження фільму</ion-label>
+    <ion-select [(ngModel)]="formSearchByParam.yearLimit" name="genres" multiple="true">
+      <ion-option *ngFor="let item of allList.yearLimits" value="{{item.code}}">{{item.name}}</ion-option>
+    </ion-select>
+
+  </ion-item>
+
+  <button ion-button type="submit" block>Пошук</button>
+
+</form>
+
+
+<div *ngFor="let item of filmForPrint">
+  <img src="https://kinoafisha.ua{{item.image}}">{{item.name}}
+</div>

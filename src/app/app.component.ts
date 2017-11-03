@@ -12,6 +12,11 @@ import{Test} from '../pages/Test/test';
 import{RegistrationPage} from "../pages/registration/registration";
 
 
+import { secondlist} from '../pages/secondlist/secondlist';
+
+import { LoginPage} from "../pages/login/login";
+import { SearchByParamPage} from "../pages/searchByParam/searchByParam";
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -34,7 +39,12 @@ export class MyApp {
       { title: 'Пошук конткретного фільму', component:FilmName},
       {title: 'Test', component: Test},
       {title: 'Пошук фільму за сеансом', component: SeancePage},
-      {title: 'Реєстрація', component: RegistrationPage}
+      {title: 'Реєстрація', component: RegistrationPage},
+      { title: 'Пошуку конкретного фільму ', component: HomePage },
+      { title: 'Пошуку сеансів ', component: ListPage },
+      { title: 'Пошук фільму за параметрами', component: SearchByParamPage},
+      { title: 'Ввійти', component: LoginPage}
+
     ];
 
   }
