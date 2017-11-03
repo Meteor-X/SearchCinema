@@ -29,7 +29,7 @@ import {LoginPage} from "../pages/login/login";
 import { SearchByParamPage} from "../pages/searchByParam/searchByParam";
 import {SearchByParamForm} from "../forms/searchByParam/searchByParam";
 //import { HTTP } from '@ionic-native/http';
-import {HttpModule} from '@angular/http';
+
 
 
 @NgModule({
@@ -46,7 +46,7 @@ import {HttpModule} from '@angular/http';
     SeancePage,
     RegistrationPage,
     RegistrationForm,
-    
+
     LoginForm,
     LoginPage,
     SearchByParamPage,
@@ -67,7 +67,7 @@ import {HttpModule} from '@angular/http';
     FilmName,
     Test,
     SeancePage,
-    RegistrationPage
+    RegistrationPage,
     LoginPage,
     SearchByParamPage
 
