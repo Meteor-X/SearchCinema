@@ -16,7 +16,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-label>Дата прем’єри в Україні </ion-label>
+    <ion-label>Дата прем’єри в Україні від</ion-label>
     <ion-datetime displayFormat="MMM DD YYYY"  pickerFormat="MMM DD YYYY" [(ngModel)]="formSearchByParam.datePremiere" name="datePremiere"></ion-datetime>
   </ion-item>
 
@@ -42,16 +42,20 @@
 
   </ion-item>
 
-  <ion-list>
-    <ion-list-header>
-      Вікові обмеження фільму
-    </ion-list-header>
-    <ion-item *ngFor="let item of allList.yearLimits">
-      <ion-label>{{item.name}}</ion-label>
-      <ion-checkbox [(ngModel)]="formSearchByParam.yearLimit[item.code]" name="genre_{{item.code}}" ></ion-checkbox>
-    </ion-item>
-  </ion-list>
+
+  <ion-item>
+    <ion-label>Вікові обмеження фільму</ion-label>
+    <ion-select [(ngModel)]="formSearchByParam.yearLimit" name="genres" multiple="true">
+      <ion-option *ngFor="let item of allList.yearLimits" value="{{item.code}}">{{item.name}}</ion-option>
+    </ion-select>
+
+  </ion-item>
 
   <button ion-button type="submit" block>Пошук</button>
 
 </form>
+
+
+<div *ngFor="let item of filmForPrint">
+  <img src="https://kinoafisha.ua{{item.image}}">{{item.name}}
+</div>

@@ -108,33 +108,100 @@ export class SearchByParamForm {
     rejisser:[],
     yearLimit:[]
   };
+  public filmForPrint=[];
   SubmitForm(){
-
 
     this.http.get("http://31.131.20.33/univ/searchcinema/1.php?url=https://kinoafisha.ua/ajax/kinoafisha_load").subscribe(
       data => {
+        this.filmForPrint = [];
         let obj = JSON.parse(data['_body']);
         let films = obj.result;
 
         console.log(films);
 
         for(var i = 0 ; i < films.length;i++){
-          if(films[i].rejisser.replace(/<[^>]+>/g,'') != '')
-            this.allList.rejisser.push({name:films[i].rejisser.replace(/<[^>]+>/g,''), id:films[i].rejisser.replace(/<[^>]+>/g,'')});
+          let printThis:boolean = false;
+
+
+
+
+          if(this.formSearchByParam.rejisser.length!=0){
+            printThis = false;
+            for (let k = 0; k < this.formSearchByParam.rejisser.length; k++){
+              if(films[i].rejisser.replace(/<[^>]+>/g,'') .search(this.formSearchByParam.rejisser[k]) != -1)
+                printThis = true;
+            }
+            if(printThis == false)
+              continue;
+          }
+
+          if(this.formSearchByParam.datePremiere!=""){
+            printThis = false;
+            let dateStart = new Date(this.formSearchByParam.datePremiere);
+            let dateFilm = new Date(films[i].premier_ua);
+            if(dateFilm.toString() == "Invalid Date")
+              continue;
+            if(dateStart<=dateFilm) {
+              printThis = true;
+            }
+          }
+
+
+
 
           let arr_countries_janre = films[i].countries.split('(');
+
           let country = arr_countries_janre[0].split(',',1)[0].trim();
+          if(this.formSearchByParam.country == country)
+            printThis = true;
 
-          let arr_janre = arr_countries_janre[1].replace(')','').split(',');
+          if(this.formSearchByParam.country!= "" && !printThis)
+            continue;
 
-          let arr_actors = films[i].actors.replace(/<[^>]+>/g,'').split(',');
+          if(this.formSearchByParam.genres.length!=0){
+            printThis = false;
+            for (let k = 0; k < this.formSearchByParam.genres.length; k++){
+              if(arr_countries_janre[1].search(this.formSearchByParam.genres[k]) != -1)
+                printThis = true;
+            }
+            if(printThis == false)
+              continue;
+          }
+
+          if(this.formSearchByParam.actors.length!=0){
+            printThis = false;
+            for (let k = 0; k < this.formSearchByParam.actors.length; k++){
+              if(films[i].actors.replace(/<[^>]+>/g,'').search(this.formSearchByParam.actors[k]) != -1)
+                printThis = true;
+            }
+            if(printThis == false)
+              continue;
+          }
+
+
+          let film_age_limit = parseInt(films[i].age_limit);
+          if(this.formSearchByParam.yearLimit.length!=0){
+            printThis = false;
+            for (let k = 0; k < this.formSearchByParam.yearLimit.length; k++){
+              if(film_age_limit == this.formSearchByParam.yearLimit[k])
+                printThis = true;
+            }
+            if(printThis == false)
+              continue;
+          }
+
+
+
+
+          if(printThis)
+            this.filmForPrint.push(films[i]);
 
 
         }
 
 
 
-        console.log(obj);
+        console.log(this.filmForPrint);
 
 
 
