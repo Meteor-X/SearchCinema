@@ -22,6 +22,7 @@ import{RegistrationForm} from "../forms/registration/registration";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {HttpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RegistrationForm
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
   ],
@@ -53,6 +55,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RegistrationPage
   ],
   providers: [
+
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
