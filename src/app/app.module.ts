@@ -31,7 +31,6 @@ import {SearchByParamForm} from "../forms/searchByParam/searchByParam";
 //import { HTTP } from '@ionic-native/http';
 
 
-
 @NgModule({
   declarations: [
     MyApp,

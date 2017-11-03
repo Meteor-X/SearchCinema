@@ -13,7 +13,6 @@ import{RegistrationPage} from "../pages/registration/registration";
 
 
 
-
 import { LoginPage} from "../pages/login/login";
 import { SearchByParamPage} from "../pages/searchByParam/searchByParam";
 
