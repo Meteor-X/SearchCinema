@@ -12,7 +12,6 @@ import{Test} from '../pages/Test/test';
 import{RegistrationPage} from "../pages/registration/registration";
 
 
-import { secondlist} from '../pages/secondlist/secondlist';
 
 import { LoginPage} from "../pages/login/login";
 import { SearchByParamPage} from "../pages/searchByParam/searchByParam";
