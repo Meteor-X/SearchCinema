@@ -1,0 +1,43 @@
+
+<form (ngSubmit)="SubmitForm()">
+  <p>Дата пошуку сеансу:<p>
+  <ion-item>
+       <ion-input [(ngModel)]="formSeance.timeseance" name="timeseance" type="time-local" placeholder="HH:mm:ss" ng-max="30"></ion-input>
+
+  </ion-item>
+  <br>
+
+  <p>Місто</p>
+  <ion-item>
+    <ion-select [(ngModel)]="formSeance.cityseance" name="cityseance" >
+      <ion-option value="kiev">Київ</ion-option>
+      <ion-option value="Od">Одеса</ion-option>
+      <ion-option value="K">Конотоп</ion-option>
+      <ion-option value="Lv">Львів</ion-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <p>Технологія відтворення фільму </p>
+  <ion-item>
+    <ion-select [(ngModel)]="formSeance.visionseance" name="visionseance" multiple="true">
+      <ion-option value="2D">2D</ion-option>
+      <ion-option value="3D">3D</ion-option>
+      <ion-option value="4DX">4DX</ion-option>
+      <ion-option value="IMAX">IMAX</ion-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <p>Кінотеатр</p>
+  <ion-item>
+    <ion-select [(ngModel)]="formSeance.cinemaseance" name="cinemaseance" >
+      <ion-option value="L">Лейпциг</ion-option>
+      <ion-option value="G">Жовтень</ion-option>
+      <ion-option value="B">Батерфляй</ion-option>
+
+    </ion-select>
+  </ion-item>
+  <br>
+
+  <br><br>
+  <button ion-button type="submit" block>Пошук</button>
+</form>

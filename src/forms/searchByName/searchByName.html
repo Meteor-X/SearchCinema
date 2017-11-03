@@ -1,0 +1,15 @@
+
+
+
+  <form (ngSubmit)="SubmitForm()">
+  <ion-item>
+    <ion-input [(ngModel)]="formName.name" name="name" type="text" placeholder="Введіть назву" ng-max="30"></ion-input>
+
+  </ion-item>
+    <br>
+
+    <br><br>
+    <button ion-button type="submit" block>Пошук</button>
+  </form>
+<br>
+  <div class = "allfilms" *ngFor="let item of allfilms"><img src="https://kinoafisha.ua{{item.image}}">  {{item.name}}</div>

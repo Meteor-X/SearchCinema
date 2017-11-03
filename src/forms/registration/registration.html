@@ -1,0 +1,35 @@
+<form (ngSubmit)="SubmitForm()">
+
+
+    <ion-item>
+      <ion-input [(ngModel)]="formRegistration.username" name="username" type="text" placeholder="Ім'я користувача" ng-max="15" required></ion-input>
+    </ion-item>
+  <br>
+    <ion-item>
+      <ion-input [(ngModel)]="formRegistration.email" name="email" type="text" placeholder="Email"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="formRegistration.phone" name="phone" type="text" placeholder="Телефон"></ion-input>
+    </ion-item>
+    <br>
+  <p>Вибір вікової категорії:</p>
+    <ion-item>
+      <ion-select [(ngModel)]="formRegistration.age" name="age" value="Вік користувача(категорія)" >
+        <ion-option value="0-12">0-12</ion-option>
+        <ion-option value="12-14">12-14</ion-option>
+        <ion-option value="16-18">16-18</ion-option>
+        <ion-option value="18+">18+</ion-option>
+      </ion-select>
+    </ion-item>
+    <br>
+
+    <ion-item>
+      <ion-input [(ngModel)]="formRegistration.password" name="password" type="password" placeholder="Пароль"></ion-input>
+    </ion-item>
+    <br>
+
+
+
+  <button ion-button type="submit" block>Зареєструватися</button>
+</form>
