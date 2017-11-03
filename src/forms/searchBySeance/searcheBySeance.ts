@@ -32,11 +32,12 @@ export class SeanceForm{
         this.allfilms.push(film[i].name);
 
         let sessions = film[i].sessions;
+for(var j =0; j< sessions.length; j++) {
+  sessions.push(film[i].sessions[j].sessions);
 
-          sessions.push(film[i].sessions.sessions);
 
+}
         console.log(this.sessions);
-
       }
 
 

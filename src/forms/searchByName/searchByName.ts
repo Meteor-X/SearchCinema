@@ -25,7 +25,7 @@ SubmitForm(){
        this.allfilms.push({name: film[i].name, image: film[i].image});
 
      }
-     this.allfilms.push(film[i].name);
+    // this.allfilms.push(film[i].name);
       // console.log(film[i].name);
 
    }
