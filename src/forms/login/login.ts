@@ -7,8 +7,8 @@ import {SearchByParamPage} from "../../pages/searchByParam/searchByParam";
   templateUrl: 'login.html'
 })
 export class LoginForm {
-
-  constructor(public navCtrl: NavController) {
+  public navCtrl: NavController;
+  constructor() {
 
   }
 
