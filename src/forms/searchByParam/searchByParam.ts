@@ -7,7 +7,7 @@ import {Http} from '@angular/http';
 }/**/
 
 @Component({
-  selector: 'search-by-param-form',
+  selector: 'search-by-param-form'  ,
   templateUrl: 'searchByParam.html'
 })
 export class SearchByParamForm {
@@ -51,6 +51,7 @@ export class SearchByParamForm {
               this.allList.countries.push({name: country, code: country});
           }
 
+          //if(arr_countries_janre[1] != undefind)
           let arr_janre = arr_countries_janre[1].replace(')','').split(',');
           for(let k = 0; k < arr_janre.length; k++) {
 
