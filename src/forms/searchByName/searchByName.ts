@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {Http} from "@angular/http";
 
 
+
+
 class film{
   name: string;
   image: string;

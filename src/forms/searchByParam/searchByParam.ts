@@ -5,26 +5,55 @@ import {Http} from '@angular/http';
   name:string;
   code:string;
 }/**/
+class List {
+  genres: Genres[];
+  rejisser: Rejisser[];
+  actors: Actors[];
+  countries: Countries[];
+  yearLimits: YearLimits[];
+}
+class Genres{
+  name: string;
+  id: string;
+}
+class Rejisser{
+  name: string;
+  id: string;
+}
+class Actors{
+  name: string;
+  id: string;
+}
+class Countries{
+  name: string;
+  code: string;
+}
+class YearLimits{
+  name: string;
+  code: string;
+}
+
 
 @Component({
   selector: 'search-by-param-form',
   templateUrl: 'searchByParam.html'
 })
 export class SearchByParamForm {
-  public allList = {
-    genres: [],
-    rejisser: [],
-    actors: [],
-    countries: [],
-    yearLimits: [
-      {name: "G 0+", code: "0"},
+  public allList: List;
+     /* {name: "G 0+", code: "0"},
       {name: "PG 6+", code: "6"},
       {name: "PG-13 12+", code: "12"},
       {name: "R 16+", code: "16"},
-      {name: "NX-17 18+", code: "18"},
-    ]
-  };
+      {name: "NX-17 18+", code: "18"},*/
+
+
   constructor(private http: Http) {
+    this.allList.yearLimits = [{name: "G 0+", code: "0"},
+      {name: "PG 6+", code: "6"},
+      {name: "PG-13 12+", code: "12"},
+      {name: "R 16+", code: "16"},
+      {name: "NX-17 18+", code: "18"}];
+
     this.http.get("http://31.131.20.33/univ/searchcinema/1.php?url=https://kinoafisha.ua/ajax/kinoafisha_load").subscribe(
       data => {
         let obj = JSON.parse(data['_body']);
@@ -194,21 +223,6 @@ export class SearchByParamForm {
 
 
           if(printThis)
-            this.filmForPrint.push(films[i]);
-
-
-        }
-
-
-
-        console.log(this.filmForPrint);
-
-
-
-      },
-      err => {
-        console.log(err);
-      });
 
 
 
