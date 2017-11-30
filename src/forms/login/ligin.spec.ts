@@ -1,9 +1,11 @@
 import { async } from '@angular/core/testing';
 import { LoginForm} from "./login";
+import { AlertController } from 'ionic-angular';
 
 
 describe('Login Form', () => {
   let app: LoginForm;
+  let alertCtrl: AlertController
   beforeEach(()=>{
     app = new LoginForm();
   });

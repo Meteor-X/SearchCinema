@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import {DeepLinkConfig, IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
 
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { secondlist} from '../pages/secondlist/secondlist';
 import {Test} from '../pages/Test/test';
@@ -24,59 +23,68 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpModule} from "@angular/http";
 
-import {LoginForm} from "../forms/login/login";
-import {LoginPage} from "../pages/login/login";
 import { SearchByParamPage} from "../pages/searchByParam/searchByParam";
 import {SearchByParamForm} from "../forms/searchByParam/searchByParam";
-//import { HTTP } from '@ionic-native/http';
+import {LoginModule} from "../pages/login/login.module";
 
+import * as firebase from "firebase";
+import {HomeModule} from "../pages/home/home.module";
 
-@NgModule({
-  declarations: [
-    MyApp,
-    HomePage,
-    ListPage,
-    secondlist,
+export const deepLinkConfig: DeepLinkConfig = {
+  links: [
+    { component: LoginModule, name: "login-page", segment: ""},
+    { component: HomeModule, name: "home", segment: "" }
+  ]
+};
+export const firebaseConfig = {
+  "apiKey": "AIzaSyBNlSXO3aXIYaEt_HTbVxHt06LQNz2mv9U",
+  "authDomain": "search-cinema.firebaseapp.com"
 
-    FilmName,
-    Test,
-    SearchByNameForm,
-    SeanceForm,
-    SeancePage,
-    RegistrationPage,
-    RegistrationForm,
+};
 
-    LoginForm,
-    LoginPage,
-    SearchByParamPage,
-    SearchByParamForm,
-  ],
+@NgModule({  declarations: [
+  MyApp,
+  ListPage,
+  secondlist,
+
+  FilmName,
+  Test,
+  SearchByNameForm,
+  SeanceForm,
+  SeancePage,
+  RegistrationPage,
+  RegistrationForm,
+  SearchByParamPage,
+  SearchByParamForm,
+],
   imports: [
     HttpModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    HttpModule,
+    IonicModule.forRoot(MyApp, {}, deepLinkConfig),
+    LoginModule,
+    HomeModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
     ListPage,
     secondlist,
     FilmName,
     Test,
     SeancePage,
     RegistrationPage,
-    LoginPage,
-    SearchByParamPage
-
+    SearchByParamPage,
   ],
   providers: [
-
     StatusBar,
     SplashScreen,
- //   HTTP,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+
+
+export class AppModule {
+  constructor (){
+    firebase.initializeApp(firebaseConfig);
+  }
+}
