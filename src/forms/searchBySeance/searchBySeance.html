@@ -10,10 +10,8 @@
   <p>Місто</p>
   <ion-item>
     <ion-select [(ngModel)]="formSeance.cityseance" name="cityseance" >
-      <ion-option value="kiev">Київ</ion-option>
-      <ion-option value="Od">Одеса</ion-option>
-      <ion-option value="K">Конотоп</ion-option>
-      <ion-option value="Lv">Львів</ion-option>
+      <ion-option *ngFor="let item of sessionC" >{{item}}></ion-option>
+
     </ion-select>
   </ion-item>
   <br>
