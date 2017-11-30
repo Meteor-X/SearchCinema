@@ -134,6 +134,7 @@ export class SeanceForm {
           for (let j = 0; j < sessionL.length; j++) {
             this.sessionC.push(sessionL[j]);
           }
+
         }
 
       }, error2 => {
