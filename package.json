@@ -42,10 +42,13 @@
     "zone.js": "0.8.18"
   },
   "devDependencies": {
+    "@angular/router": "^5.0.0",
+    "ionic-mocks": "^1.0.3",
     "@ionic/app-scripts": "3.0.0",
     "@types/jasmine": "^2.8.2",
     "@types/node": "^8.0.53",
     "angular2-template-loader": "^0.6.2",
+    "firebase": "^4.6.2",
     "html-loader": "^0.5.1",
     "istanbul-instrumenter-loader": "^3.0.0",
     "jasmine": "^2.8.0",

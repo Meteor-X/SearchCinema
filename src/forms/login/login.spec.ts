@@ -2,23 +2,22 @@ import { async, TestBed } from '@angular/core/testing';
 import {IonicModule, NavController, Platform} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {LoginPage} from "./login";
-
 import {PlatformMock, SplashScreenMock, StatusBarMock} from "../../../test-config/mocks-ionic";
 import {LoginForm} from "../../forms/login/login";
 import {By} from "@angular/platform-browser";
 import {firebaseConfig} from "../../app/app.module";
 import * as firebase from "firebase";
+import {LoginPage} from "../../pages/login/login";
 
 
-describe('LoginPage Component', () => {
+describe('LoginForm Component', () => {
   let fixture;
   let component;
   firebase.initializeApp(firebaseConfig);
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LoginPage, LoginForm],
+      declarations: [LoginForm],
       imports: [
         IonicModule.forRoot(LoginPage)
 
@@ -33,26 +32,22 @@ describe('LoginPage Component', () => {
     })
   }));
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginPage);
+    fixture = TestBed.createComponent(LoginForm);
     component = fixture.componentInstance;
   });
+  /*
   it('should be created', () => {
     fixture.detectChanges();
 
-    expect(component instanceof LoginPage).toBe(true);
+    expect(component instanceof LoginForm).toBe(true);
   });
- /* it('enter ',()=>{
+  it('enter ',()=>{
     let input = fixture.debugElement
       .query(By.css('ion-input[name=login]'));
     let el = input.nativeElement;
     el.value = 'frt@gmail.com';
     el.dispatchEvent(new Event('input'));
     expect(component.formLogin.login).toBe('frt@gmail.com');
-  });*/
- it('should conect loginpage from', ()=>{
-   fixture.detectChanges();
-   let de = fixture.debugElement.query(By.css('login-form'));
-   const form = de.nativeElement;
-   expect(form).toBeDefined();
- });
+  });
+  /**/
 });
